@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
 
-    {% if title %}
-        <title>Blog - {{ title }}</title>
-    {% else %}
-        <title>Blog</title>
-    {% endif %}
-</head>
-<body>
+{% block content %}
     <h1>Hello, {{ user.username }}</h1>
     {% for post in posts %}
         <div>
-            <p>{{ post.author.name }} says: <b>{{ post.body }}</b></p>
+            <p>{{ post.author.author }} says: <b>{{ post.body }}</b></p>
         </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
